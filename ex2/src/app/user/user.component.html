@@ -1,0 +1,42 @@
+<div>
+    <h1>Informations de l'utilisateur</h1>
+    <p>Nom : {{ name }}</p>
+    <p>Email : {{ email }}</p>
+    <p>Adresse : {{ address }}</p>
+    <button (click)="toggleHobbies()">{{ showHobbies ? 'Masquer hobbies' : 'Afficher hobbies' }}</button>
+    <ul *ngIf="showHobbies">
+        <li *ngFor="let hobby of hobbies; let i = index">
+            {{ hobby }}
+            <button (click)="removeHobby(i)">Supprimer</button>
+        </li>
+    </ul>
+</div>
+<hr>
+<div>
+    <h1>Formulaire d'édition</h1>
+    <form>
+        <div><label>Nom :&nbsp;</label>
+            <input type="text" [(ngModel)]="name" name="name">
+        </div>
+        <br>
+        <div><label>Email :&nbsp;</label>
+            <input type="text" [(ngModel)]="email" name="email">
+        </div>
+        <br>
+        <div><label>Adresse :&nbsp;</label>
+            <input type="text" [(ngModel)]="address" name="address">
+        </div>
+
+        <!-- <div><label>Hobby :&nbsp;</label>
+            <input type="text" [(ngModel)]="hobby" name="hobby">
+            <button (click)="add()">add</button>
+        </div>
+
+        <div>
+            <label>Chose what to delete :&nbsp;</label>
+            <input type="text" [(ngModel)]="chose" name="chose">
+            <button (click)="remove2()">Supprimer</button>
+        </div> -->
+
+    </form>
+</div>

@@ -1,0 +1,8 @@
+<hr>
+<input #myInput type="text">&nbsp;
+<button (click)="calculateCircle(myInput.value)">Calculer cercle</button>
+<button (click)="calculateSquare(myInput.value)">Calculer carré</button>
+<div *ngIf="result">
+    <br>Pour la valeur {{value}}, le résultat est {{result}}
+</div>
+<hr>
